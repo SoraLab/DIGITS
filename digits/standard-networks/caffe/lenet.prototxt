@@ -156,7 +156,7 @@ layer {
   bottom: "ip2"
   bottom: "label"
   top: "accuracy"
-  include { stage: "val" }
+  exclude { stage: "deploy" }
 }
 layer {
   name: "loss"

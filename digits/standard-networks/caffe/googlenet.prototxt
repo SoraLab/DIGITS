@@ -2482,7 +2482,7 @@ layer {
   bottom: "loss3/classifier"
   bottom: "label"
   top: "accuracy"
-  include { stage: "val" }
+  exclude { stage: "deploy" }
 }
 layer {
   name: "loss3/top-5"
@@ -2490,7 +2490,7 @@ layer {
   bottom: "loss3/classifier"
   bottom: "label"
   top: "accuracy-top5"
-  include { stage: "val" }
+  exclude { stage: "deploy" }
   accuracy_param {
     top_k: 5
   }
